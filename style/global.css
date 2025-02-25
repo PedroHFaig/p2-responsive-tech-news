@@ -50,6 +50,10 @@ h3 {
     color: var(--text-color-primary);
 }
 
+ul[role="list"] {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -60,7 +64,7 @@ a:hover {
     color: var(--brand-color-light);
 
     & svg path {
-        stroke: var(--brand-color-light);
+        fill: var(--brand-color-light);
     }
 }
 

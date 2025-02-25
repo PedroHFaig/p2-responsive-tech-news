@@ -1,0 +1,51 @@
+#nav-primary {
+    justify-content: space-between;
+    align-items: center;
+ 
+    padding: 1rem;
+
+    & a {
+        align-items: center;
+        gap: .5rem;
+
+        font: var(--fw-lg) var(--fs-md)/1.4 var(--ff-archivo);
+        color: var(--text-color-primary);
+
+        &:hover {
+            color: var(--brand-color-light);
+        }
+    }
+}
+
+#nav-secondary {
+    padding: .875rem 1rem;    
+    border-block: 1px solid var(--stroke-color);
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    scrollbar-width: none; /* Para Firefox */
+    -ms-overflow-style: none;  /* Para Internet Explorer e Edge */
+
+    & ul {        
+        align-content: center;
+        width: max-content;
+        gap: 2rem;
+    }
+    
+    &::-webkit-scrollbar { /* para Chrome*/
+        display: none;
+    }
+}
+
+@media (width >= 57em) {
+    #nav-secondary {
+        padding-inline: 2rem;
+
+        & ul {
+            width: auto;
+            justify-content: space-between;
+            overflow-x: auto;
+        }
+    }
+}

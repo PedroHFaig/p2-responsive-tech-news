@@ -1,0 +1,81 @@
+main {
+    margin: 1rem;
+}
+
+#highlights {    
+    grid-template-rows: min(408px) 1fr;
+
+    .card {
+        position: relative;
+        
+        & img {            
+            object-fit: cover;
+            border-radius: .75rem;
+            max-width: 100%;
+        }
+    
+        & figcaption {
+            gap: .5rem;
+            position: absolute;
+            bottom: 0;
+            margin: auto .75rem .75rem;
+            max-width: 570px;
+    
+            & h1, h3 {
+                margin-top: .5rem;
+                
+                display: -webkit-box;
+                -webkit-line-clamp: 3; /* Número de linhas desejadas */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;                
+            }    
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            top: 50%;
+            background: linear-gradient(
+                180deg,
+                transparent 0%,
+                #020617 100%
+            );
+        }
+    }
+
+    & > .card {
+        & figcaption {
+            margin: auto 1rem 1rem;
+        } 
+
+        & img {
+            height: 100%;
+        }
+    }
+}
+
+@media (width >= 57em) {
+    main {
+        margin: 2.5rem 2rem 5rem;
+        gap: 5rem;
+    
+        grid-template-areas:
+        "highlights highlights"
+        "weekly weekly"
+        "ai aside"
+    }
+
+    #highlights {
+        grid-area: highlights;
+        grid-template-rows: initial;
+        grid-template-columns: 1fr 1fr;
+
+        & > .card {
+            & figcaption {
+                margin: auto 1.5rem 1.5rem;
+            }
+        }
+    }
+}

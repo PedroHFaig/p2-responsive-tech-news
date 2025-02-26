@@ -1,5 +1,20 @@
-.flex{
+.flex {
     display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-flow-col {
+    grid-auto-flow: column;
+}
+
+.grid-col {
+    grid-template-columns: 1fr;
+}
+.gap-1 {
+    gap: 1rem;
 }
 
 .desktop-only {
@@ -10,5 +25,9 @@
 @media (width >= 57em) {
     .desktop-only {
         display: initial;
+    }
+
+    .grid-col {
+        grid-template-columns: 1fr 1fr;
     }
 }

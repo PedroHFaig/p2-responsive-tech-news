@@ -1,16 +1,22 @@
 main {
     margin: 1rem;
+    gap: 2rem;
+
+    & section {
+        border-top: 1px solid var(--stroke-color);
+    }
 }
 
 #highlights {    
     grid-template-rows: min(408px) 1fr;
+    border: none;
 
     .card {
         position: relative;
         
         & img {            
             object-fit: cover;
-            border-radius: .75rem;
+            border-radius: .25rem;
             max-width: 100%;
         }
     
@@ -56,6 +62,55 @@ main {
     }
 }
 
+#weekly {
+   
+    & header{
+        justify-content: space-between;
+
+        font-size: var(--fw-md);
+
+        padding-top: .75rem;
+
+        & a{
+            align-items: center;
+            gap: .25rem;
+        }
+    }
+
+    & .cards {
+        grid-template-rows: repeat(4, 1fr);
+
+        margin-block: 1.5rem;
+        
+
+        & img {            
+            object-fit: cover;
+            border-radius: .25rem;
+            max-width: 100%;
+        }
+
+        & h2 {
+            margin-top: .5rem;
+            
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Número de linhas desejadas */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;                
+        }
+
+        & figure {
+            position: relative;
+
+            & .content-tag {
+                position: absolute;
+                top: .5rem;
+                left: .5rem;
+            }
+        }
+    }
+}
+
 @media (width >= 57em) {
     main {
         margin: 2.5rem 2rem 5rem;
@@ -76,6 +131,15 @@ main {
             & figcaption {
                 margin: auto 1.5rem 1.5rem;
             }
+        }
+    }
+
+    #weekly {
+        grid-area: weekly;
+        
+        & .cards {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
         }
     }
 }

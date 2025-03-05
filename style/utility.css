@@ -26,10 +26,30 @@
     display: none;
 }
 
+.mobile-only {
+    display: initial;
+}
+
+h1, h2, h3, p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Número de linhas desejadas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p {
+    -webkit-line-clamp: 4;
+}
+
 
 @media (width >= 57em) {
     .desktop-only {
         display: initial;
+    }
+
+    .mobile-only {
+        display: none;
     }
 
     .grid-col {
